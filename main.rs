@@ -1,17 +1,15 @@
 
 
-
 fn main() {
-    let message = "Hello World";
-    let message_2 = print_welcome(message);
-    println!("{}", message_2);
+    let is_it_fun = false;
+    let num = -10;
+
+    let small_num:u8 = 255;
+    let small_num_2:i8 = 127; 
+
+
 }
 
-fn print_welcome(text: &str) -> &str {
-    println!("{}", text);
-    let new_message = "Hi There";
-    new_message
-}
 
 
 
