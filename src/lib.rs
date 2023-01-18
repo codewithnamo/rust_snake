@@ -1,5 +1,14 @@
 
+mod another_lib;
+
+// use does not import anything. it will help shorten a path
+// therefore in fn outsider() no longer: "another_lib::another_mod::another_fn();"
+use another_lib::another_mod;
+
 fn outsider() {
+    // this is better practice than letting use also include another_mod
+    // because this clearly shows another_fn() is imported from somewhere else
+    another_mod::another_fn();
     println!("outsider fn!");
 }
 
