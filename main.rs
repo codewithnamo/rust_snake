@@ -1,5 +1,5 @@
 
-use snake_game::learning_rust::{Person, Log};
+use snake_game::education::learning_rust::{Person, Log};
 
 
 fn main() {
