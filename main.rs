@@ -1,8 +1,8 @@
 
-use snake_game::education::learning_rust::{Person, Log};
+use snake_game::education::learning_rust::{Person};
 
 
 fn main() {
   let person = Person::new();
-  person.display_info();
+  println!("{:#?}", person.id)
 } 
