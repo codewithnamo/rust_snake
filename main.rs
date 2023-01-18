@@ -1,9 +1,8 @@
 
-// use snake_game::education::learning_rust::{Person, Log};
-use snake_game::education::learning_rust::Log;
+use snake_game::education::learning_rust::{Person, Log};
 
 
 fn main() {
-  let person = snake_game::education::learning_rust::Person::new();
+  let person = Person::new();
   person.display_info();
 } 

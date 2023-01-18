@@ -1,14 +1,13 @@
 
-mod another_lib;
+mod another_lib_v2;
 
 // use does not import anything. it will help shorten a path
 // therefore in fn outsider() no longer: "another_lib::another_mod::another_fn();"
-use another_lib::another_mod;
+use another_lib_v2::another_mod;
 
 fn outsider() {
-    // this is better practice than letting use also include another_mod
-    // because this clearly shows another_fn() is imported from somewhere else
     another_mod::another_fn();
+    // crate::another_mod::another_fn();
     println!("outsider fn!");
 }
 
@@ -65,12 +64,8 @@ pub mod education {
         impl Log for Person {
             fn display_info(&self) {
 
-                // absolute import in lib.rs
-                crate::outsider();
-
-                // super -> accessing outside of the current module
-                // it's like going one directory above".."
-                super::super::outsider();
+                super::super::another_mod::another_fn();
+                crate::another_mod::another_fn();
             
                 println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
             }
