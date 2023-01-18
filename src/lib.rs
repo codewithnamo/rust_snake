@@ -1,4 +1,8 @@
 
+fn outsider() {
+    println!("outsider fn!");
+}
+
 pub mod learning_rust {
 
     mod top_level {
@@ -48,15 +52,13 @@ pub mod learning_rust {
     impl Log for Person {
         fn display_info(&self) {
 
-            // importing with absolute path 
-            // crate points to -> src/lib.rs and src/main.rs
-            crate::learning_rust::top_level::hi_there();
-            crate::learning_rust::top_level::low_level::hello_world();
-            
-            // relative path
-            top_level::hi_there();
-            top_level::low_level::hello_world();
+            // absolute import in lib.rs
+            // crate::outsider();
 
+            // super -> accessing outside of the current module
+            // it's like going ".."
+            super::outsider();
+           
             println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
         }
     }
