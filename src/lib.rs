@@ -16,6 +16,8 @@ pub mod education {
 
 
     pub mod learning_rust {
+        use core::fmt;
+
 
         mod top_level {
             pub fn hi_there() {
@@ -36,17 +38,22 @@ pub mod education {
             }
         }
 
-        #[derive(Debug)]
         pub enum PersonId {
             Passport(u32),
             IdentityCard(u32, u32, u32),
+        }
+
+        impl std::fmt::Display for PersonId {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(f, "({},{})", self.x, self.y)
+            }
         }
 
         pub struct Person {
             name: String,
             last_name: String,
             age: u32,
-            id: PersonId,
+            pub id: PersonId,
         }
 
         pub struct Animal(pub String);
