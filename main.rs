@@ -1,12 +1,5 @@
 
-// use snake_game::Person;
-// use snake_game::Animal;
-// use snake_game::log_info;
-// use snake_game::log_info_2;
-
-// import everything public from lib.rs
-// use snake_game::*;
-use snake_game::{Person, Animal, log_info, log_info_2};
+use snake_game::learning_rust::{Person, Animal, log_info, log_info_2};
 
 
 fn main() {
