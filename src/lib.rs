@@ -21,7 +21,7 @@ pub mod learning_rust {
     }
 
     #[derive(Debug)]
-    enum PersonId {
+    pub enum PersonId {
         Passport(u32),
         IdentityCard(u32, u32, u32),
     }
@@ -71,13 +71,17 @@ pub mod learning_rust {
             }
         }
 
-        fn from(name: String, last_name: String, age: u32, id: PersonId) -> Person {
+        pub fn from(name: String, last_name: String, age: u32, id: PersonId) -> Person {
             Person {
                 name,
                 last_name,
                 age, 
                 id
             }
+        }
+
+        pub fn name(&self) -> &String {
+            &self.name
         }
 
         pub fn change_age(&mut self, new_age: u32) {
