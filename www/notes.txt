@@ -1,0 +1,25 @@
+
+
+
+We need to combile Rust to WebAssembly(WASM) code
+WASM can be executed in the browser
+Unlike Javascript, it runs at almost native speed
+It's suitable for 3D apps, CAD, Virtual Reality, system applications, games, etc.
+Something that requires a lot of resources and has to be performant
+WebAssembly can handle it
+
+Backend: Rust supports compiling into WASM 
+Frontend: Javascript
+
+URL list from Thursday, Jan. 19 2023 16:25 PM
+To copy this list, type [Ctrl] A, then type [Ctrl] C.
+
+wat2wasm demo
+https://webassembly.github.io/wabt/demo/wat2wasm/
+
+rustwasm/book: The Rust and WebAssembly Book
+https://github.com/rustwasm/book
+
+WebAssembly | MDN
+https://developer.mozilla.org/en-US/docs/WebAssembly
+
