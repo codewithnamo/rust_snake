@@ -18,4 +18,6 @@
 <!-- In WASM, you have these types only: i32, i64, f32, f64. Integers and floats only. -->
 
 <!-- (module (func $sum (param $a i32) (param $b i32) (result i32) local.get $a
-local.get $b i32.add ) ) -->
+local.get $b i32.add ) 
+(export "sum" (func $sum))
+) -->

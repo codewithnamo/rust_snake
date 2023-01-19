@@ -23,3 +23,4 @@ https://github.com/rustwasm/book
 WebAssembly | MDN
 https://developer.mozilla.org/en-US/docs/WebAssembly
 
+https://webassembly.github.io/spec/core/binary/types.html
