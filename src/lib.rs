@@ -8,16 +8,13 @@ use another_lib_v2::another_mod;
 fn outsider() {
     another_mod::another_fn();
     // crate::another_mod::another_fn();
-    println!("outsider fn!");
+    println!("outsider fn!"); 
 }
 
 pub mod education {
 
-
-
     pub mod learning_rust {
-        use core::fmt;
-
+        use std::fmt;
 
         mod top_level {
             pub fn hi_there() {
@@ -43,9 +40,16 @@ pub mod education {
             IdentityCard(u32, u32, u32),
         }
 
-        impl std::fmt::Display for PersonId {
-            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                write!(f, "({},{})", self.x, self.y)
+        impl fmt::Display for PersonId {
+            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+                match self {
+                    PersonId::Passport(x) => {
+                        write!(f, "MY PASSPORT : {}", x)
+                    },
+                    PersonId::IdentityCard(x, y, z) => {
+                        write!(f, "This is my ID: ----> {} {} {} <----", x, y, z)
+                    }
+                }
             }
         }
 
@@ -74,7 +78,7 @@ pub mod education {
                 super::super::another_mod::another_fn();
                 crate::another_mod::another_fn();
             
-                println!("{} {} {} {:?}", self.name, self.last_name, self.age, self.id)
+                println!("{} {} {} {}", self.name, self.last_name, self.age, self.id)
             }
         }
 
@@ -85,6 +89,7 @@ pub mod education {
                     last_name: "Default".to_string(),
                     age: 0,
                     id: PersonId::IdentityCard(540, 320, 100),
+                    // id: PersonId::Passport(312398)
                 }
             }
 
