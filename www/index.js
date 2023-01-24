@@ -17,9 +17,7 @@ async function init() {
 
   const response = await fetch("sum.wasm");
   const buffer = await response.arrayBuffer();
-  debugger;
   await WebAssembly.instantiate(buffer, importObject);
-  debugger;
 
   const uint8Array = new Uint8Array(memory.buffer, 0, 2);
 

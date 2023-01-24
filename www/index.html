@@ -11,16 +11,3 @@
     <script src="./index.js"></script>
   </body>
 </html>
-
-<!-- we can either create memory in WebAssembly and export it to Javascript  -->
-<!-- or we can create memory in JS and import it to WebAssembly -->
-<!-- 1 means 1 page of memory, a page has around 64 KB -->
-<!-- "memory 0" means memory at index of zero.. i.e. first memory allocated -->
-
-<!-- Start of WebAssembly -->
-<!-- In WASM, you have these types only: i32, i64, f32, f64. Integers and floats only. -->
-
-<!-- (module (import "console" "log" (func $myLog)) (import "console" "error" (func
-$error)) (memory (import "js" "mem") 1) (data (i32.const 0) "Hi") (func $sum
-(param $a i32) (param $b i32) (result i32) call $myLog call $error local.get $a
-local.get $b i32.add ) (export "sum" (func $sum)) ) -->
