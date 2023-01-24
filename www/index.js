@@ -14,8 +14,12 @@ async function init() {
   const buffer = await response.arrayBuffer();
   const wasm = await WebAssembly.instantiate(buffer, importObject);
   const sumFunction = wasm.instance.exports.sum;
-  const result = sumFunction(100, 300);
-  console.log(result);
+  const wasmMemory = wasm.instance.exports.mem;
+  debugger;
+  const uint8Array = new Uint8Array(wasmMemory.buffer, 0, 2);
+
+  const hiText = new TextDecoder().decode(uint8Array);
+  console.log(hiText);
 }
 
 init();
