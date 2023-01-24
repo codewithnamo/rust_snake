@@ -3,6 +3,6 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn greet(name: &str) {
-    println!("Hi there{}", name);
+    println!("Hi there {}", name);
 }
 
