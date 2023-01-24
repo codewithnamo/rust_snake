@@ -1,6 +1,6 @@
-import init, { greet } from "snake_game";
+import init from "snake_game";
 
-init().then((_) => {
-  greet("Harrison");
+init().then((wasm) => {
+  wasm.greet("Harrison");
   console.log("okay!");
 });
